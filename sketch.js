@@ -1,4 +1,4 @@
-let cellSize = 100;
+let cellSize = 50;
 let spacer = 20; // Spazio tra le celle
 let margin = 20;
 
@@ -20,9 +20,12 @@ function setup() {
 function draw() {
     background("#FFFEFA");
 
-    let offsetX = (width - gridWidth * cellSize+spacer) / 2;// Calcola lo slittamento per centrare la griglia
-    let offsetY = (height - gridHeight * cellSize+spacer) / 2;
+    let gridTotalWidth = gridWidth * (cellSize + spacer) - spacer; // larghezza totale della griglia
+    let gridTotalHeight = gridHeight * (cellSize + spacer) - spacer; // altezza totale della griglia
 
+    let offsetX = (width - gridTotalWidth) / 2; // margine uguale a destra e sinistra
+    let offsetY = (height - gridTotalHeight) / 2; // margine uguale in alto e in basso
+    
     for (let i = 0; i < gridWidth; i++) {
         for (let j = 0; j < gridHeight; j++) {
             // Calcola la posizione della cella
@@ -32,7 +35,7 @@ function draw() {
             // Imposta un colore casuale per lo sfondo della cella
             let colorfill = color(random(colorPalette));
             stroke(colorfill);
-            strokeWeight(2);
+            strokeWeight(1.5);
             noFill();
             rect(x, y, cellSize, cellSize); // Disegna il rettangolo come sfondo della cella
 
@@ -48,7 +51,7 @@ function draw() {
                 // Disegna il cerchio
                 let colorfill = color(random(colorPalette)); 
                 stroke(colorfill);
-                strokeWeight(2);
+                strokeWeight(1.5);
                 noFill();
                 ellipse(circleX, circleY, circleSize);
             }
@@ -74,7 +77,7 @@ function draw() {
                 // Disegna il quadrato
                 let colorfill = random(colorPalette)
                 stroke(colorfill);
-                strokeWeight(2);
+                strokeWeight(1.5);
                 noFill();
                 rect(rectX, rectY, rectSize);
             }
@@ -99,7 +102,7 @@ function draw() {
                 // Disegna il quadrato
                 let colorfill = random(colorPalette)
                 stroke(colorfill);
-                strokeWeight(2);
+                strokeWeight(1.5);
                 line(lineX, lineY, lineX + lineSize, lineY);
             }
         }
