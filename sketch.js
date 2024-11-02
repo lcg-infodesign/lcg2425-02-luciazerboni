@@ -1,5 +1,5 @@
 let cellSize = 50;
-let spacer = 20; // Spazio tra le celle
+let spacer = 40; // Spazio tra le celle
 let margin = 20;
 
 let colorPalette = [
@@ -25,7 +25,7 @@ function draw() {
 
     let offsetX = (width - gridTotalWidth) / 2; // margine uguale a destra e sinistra
     let offsetY = (height - gridTotalHeight) / 2; // margine uguale in alto e in basso
-    
+
     for (let i = 0; i < gridWidth; i++) {
         for (let j = 0; j < gridHeight; j++) {
             // Calcola la posizione della cella
