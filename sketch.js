@@ -1,5 +1,5 @@
 let cellSize = 50;
-let spacer = 40; // Spazio tra le celle
+let spacer = 50; // Spazio tra le celle
 let margin = 20;
 
 let colorPalette = [
